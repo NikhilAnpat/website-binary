@@ -13,6 +13,8 @@ const content = [
         Collaborative Editing
       </div>
     ),
+    image:"../src/assets/card1.svg",
+    picture:"../src/assets/website_redesign-min.png3.webp"
   },
   {
     title: "Real time changes",
@@ -28,6 +30,8 @@ const content = [
           alt="linear board demo" />
       </div>
     ),
+    image:"../src/assets/card2.svg",
+    picture:"../src/assets/ux_ui_design-min4.png"
   },
   {
     title: "Version control",
@@ -39,6 +43,8 @@ const content = [
         Version control
       </div>
     ),
+    image:"../src/assets/card3.svg",
+    picture:"../src/assets/responsive_design-min2.png"
   },
   {
     title: "Running out of content",
@@ -50,12 +56,14 @@ const content = [
         Running out of content
       </div>
     ),
+    image:"../src/assets/card4.svg",
+    picture:"../src/assets/custom_web_design-min.webp"
   },
 ];
 
 export function StickyScrollRevealDemo() {
   return (
-    <div className="w-full h-screen px-0 py-0 overflow-hidden">
+    <div className="w-full bg-[#00042A] px-0 py-0">
       <StickyScroll content={content} />
     </div>
   );

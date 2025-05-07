@@ -7,7 +7,7 @@ import { FloatingDockDemo } from './FloatingDockDemo';
 const Footer = () => {
   return (
     <>
-    <footer className="relative bg-gradient-to-t from-black to-gray-900 text-white px-2 py-3 font-sans z-10 overflow-hidden">
+    <footer className="relative bg-gradient-to-t from-black to-gray-900 text-white px-2 py-3 font-sans z-20 overflow-hidden">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between py-7 gap-12 relative z-10">
         {/* Left Section */}
         <div className="container max-w-lg space-y-4">
