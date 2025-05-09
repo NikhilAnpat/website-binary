@@ -6,24 +6,28 @@ function TypewriterEffectSmoothDemo() {
   const words = [
     {
       text: "Build",
+      className:"text-lg md:text-2xl lg:text-5xl "
     },
     {
       text: "awesome",
+      className:"text-lg md:text-2xl lg:text-5xl  "
     },
     {
       text: "apps",
+      className:"text-lg md:text-2xl lg:text-5xl "
     },
     {
       text: "with",
+      className:"text-lg md:text-2xl lg:text-5xl "
     },
     {
       text: "Aceternity.",
-      className: "text-blue-500 dark:text-blue-500",
+      className: "text-blue-500 dark:text-blue-500 text-lg md:text-2xl lg:text-5xl ",
     },
   ];
 
   return (
-    <div className="flex flex-col items-center justify-center h-[3rem] space-y-7  ">
+    <div className="flex items-center justify-center  ">
       
 
       <TypewriterEffectSmooth words={words} />

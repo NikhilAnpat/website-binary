@@ -395,10 +395,15 @@ export function GlobeDemo() {
 
   return (
     <div
-      className="flex flex-row items-center justify-center py-20 bg-gradient-to-b from-black to-gray-900   md:h-auto  bg-white relative w-full">
-       
+      className="flex flex-row pt-[20px] items-center justify-center bg-gradient-to-b from-[#000A32] to-gray-800 bg-[#1E3075] relative w-full h-full">
+
       <div
-        className="max-w-7xl mx-auto w-full relative overflow-hidden h-full md:h-[40rem] px-4">
+        className="max-w-7xl mx-auto w-full relative overflow-hidden h-full md:h-[45rem] px-4">
+        <div className="absolute pb-1  w-full h-72 md:h-full z-0 opacity-60">
+          <Suspense fallback={<div>Loading globe...</div>}>
+            <World data={sampleArcs} globeConfig={globeConfig} />
+          </Suspense>
+        </div>
         <motion.div
           initial={{
             opacity: 0.9,
@@ -411,33 +416,57 @@ export function GlobeDemo() {
           transition={{
             duration: 1,
           }}
-          className="div">
-          <h1
-            className="text-center text-xl md:text-4xl font-bold text-black dark:text-white">
-            <TypewriterEffectSmoothDemo />
-          </h1>
-          <h4 className="text-center text-lg md:text-2xl font-normal text-neutral-700 dark:text-neutral-200 mt-5 mb-5 mx-auto">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, nostrum.4
-          </h4>
-         
-          <p
-            className="text-center text-white text-base md:text-xl font-normal text-neutral-700 dark:text-neutral-200 pb-3 opacity-100  mx-auto">
-            This globe is interactive and customizable. Have fun with it, and
-            This globe is interactive and customizable. Have fun with it, and
-            This globe is interactive and customizable. Have fun with it, and
+          className="div relative z-10">
+          
+            <h1
+              className="text-center text-2xl mt-[10px] md:text-4xl font-bold text-black dark:text-white">
+              <TypewriterEffectSmoothDemo />
+            </h1>
 
-            This globe is interactive and customizable. Have fun with it, and
-            This globe is interactive and
-            don&apos;t forget to share it. :)
-          </p>
+            <h4 className="text-center text-[1rem] lg:text-[1.5rem] text-neutral-700 md:mt-4 mt-2 dark:text-neutral-200  mx-auto">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, nostrum.4
+            </h4>
+
+            <p
+              className="text-center text-white h-[418px] overflow-y-hidden leading-[1.5] font-normal font-sans text-base
+               lg:text-xltext-neutral-700 dark:text-neutral-200 p-[15px] opacity-100 mx-auto">
+              This globe is interactive and customizable. Have fun with it, and
+              This globe is interactive and customizable. Have fun with it, and
+              This globe is interactive and customizable. Have fun with it, and
+
+              This globe is interactive and customizable. Have fun with it, and
+              This globe is interactive and
+              don't forget to share it. :)
+
+              This globe is interactive and customizable. Have fun with it, and
+              This globe is interactive and customizable. Have fun with it, and
+              This globe is interactive and customizable. Have fun with it, and
+
+              This globe is interactive and customizable. Have fun with it, and
+              This globe is interactive and
+              don't forget to share it. :)
+
+              This globe is interactive and customizable. Have fun with it, and
+              This globe is interactive and customizable. Have fun with it, and
+              This globe is interactive and customizable. Have fun with it, and
+
+              This globe is interactive and customizable. Have fun with it, and
+              This globe is interactive and
+              don't forget to share it. :)
+
+              This globe is interactive and customizable. Have fun with it, and
+              This globe is interactive and customizable. Have fun with it, and
+              This globe is interactive and customizable. Have fun with it, and
+
+              This globe is interactive and customizable. Have fun with it, and
+              This globe is interactive and
+              don't forget to share it. :)
+            </p>
+          
         </motion.div>
         <div
-          className="absolute pt-4 w-full bottom-0 inset-x-0 h-40  pointer-events-none select-none from-transparent dark:to-black to-white z-40" />
-        <div className="absolute pb-1 mb-[70px] w-full -bottom-20 h-72 md:h-full z-10 opacity-60" >
-        <Suspense fallback={<div>Loading globe...</div>}>
-          <World data={sampleArcs} globeConfig={globeConfig} />
-          </Suspense>
-        </div>
+          className="absolute pt-4 w-full top-0 inset-x-0 h-40 pointer-events-none 
+          select-none from-transparent dark:to-black to-white z-40" />
       </div>
     </div>
   );

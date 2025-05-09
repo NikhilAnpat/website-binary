@@ -1,8 +1,9 @@
 .fullscreen-slider {
-  height: 100vh;
+ padding: 20px;
   width: 100vw;
-  background: linear-gradient(to right, #0156aa, #2e0066);
+  background: #00042A;
   color: white;
+  z-index: 10;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -41,9 +42,14 @@
   width: 100%;
   margin-top: 2px;
   padding: 0px;
+ 
 }
 
 .client-slider {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  
   margin: 30px 0;
   align-items: center;
   justify-content: center;
@@ -66,30 +72,39 @@
 /* ✅ Rectangle client box with centered content */
 .client-box {
   background: rgba(255, 255, 255, 0.05);
-  border-radius: 8px;
-  width: 220px;
-  height: 120px;
+  border-radius: 0px;
+  max-width: 280px;
+  max-height: 140px;
   margin: 10px auto;
-  padding: 10px;
+  padding: 15px;
   text-align: center;
   transition: transform 0.3s ease-in-out;
-
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
-  box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2),
-              0 0 4px rgba(166, 15, 177, 0.5),
-              0 0 8px rgba(59, 1, 55, 0.4);
   overflow: hidden;
 }
 
-.client-box:hover {
+.client-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 1px solid transparent;
+  border-image: linear-gradient(to right, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 100%) 1;
+  border-right: none;
+  pointer-events: none;
+}
+
+/* .client-box:hover {
   background: rgba(255, 255, 255, 0.1);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
   transform: scale(1.05);
-}
+} */
 
 /*  Centered icon inside rectangle */
 .client-logo {
@@ -121,35 +136,55 @@
 }
 
 .glow-btn {
-  background: linear-gradient(to right, #00264d, #2e0066);
-  color: white;
-  padding: 14px 49px;
-  border: none;
-  margin-bottom: 68px;
-  border-radius: 6px;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-  font-size: 18px;
+  --btn-padding-top-bottom: .75em;
+  --btn-primary-border: 3px;
+  --btn-font-weight: 700;
   text-transform: uppercase;
-  outline: none;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2),
-              0 0 12px rgba(0, 153, 255, 0.5),
-              0 0 24px rgba(0, 153, 255, 0.4);
+  letter-spacing: .08em;
+  border: var(--btn-primary-border) solid;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(7deg, #009cff 50%, #522ef4 65%, #9537e3 80%);
+  background-color: transparent;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+  padding: 10px 20px;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.9s ease;
+}
+
+.glow-btn::before {
+  content: '';
+  position: absolute;
+  bottom: -100%;
+  left: -400%;
+  width: 300%;
+  height: 300%;
+  background: white;
+  transform: rotate(45deg);
+  transition: all 0.9s ease;
+  z-index: -1;
+  opacity: 0;
 }
 
 .glow-btn:hover {
   transform: scale(1.05);
-  background-color: aliceblue;
-  background: transparent;
-  color: transparent;
-  background-image: linear-gradient(to right, #00264d, #2e0066);
-  -webkit-background-clip: text;
-  background-clip: text;
-  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.25),
-              0 0 16px rgba(0, 153, 255, 0.6),
-              0 0 30px rgba(0, 153, 255, 0.5);
+  color: #522ef4;
+  border-color: white;
+}
+
+.glow-btn:hover::before {
+  bottom: -50%;
+  left: -50%;
+  opacity: 1;
+}
+
+.glow-btn p, .glow-btn svg {
+  position: relative;
+  z-index: 1;
 }
 
 /* ✅ Responsive Styles */
@@ -167,17 +202,17 @@
   }
 
   .client-box {
-    width: 250px;
-    height: 130px;
+    max-width: 280px;
+    max-height: 140px;
   }
 
   .client-logo {
-    width: 60px;
-    height: 60px;
+    width: 70px;
+    height: 70px;
   }
 
   .client-box p {
-    font-size: 15px;
+    font-size: 16px;
   }
 }
 
@@ -195,8 +230,8 @@
   }
 
   .client-box {
-    width: 280px;
-    height: 140px;
+    width: 290px;
+    height: 150px;
   }
 
   .client-slider .slick-slide {

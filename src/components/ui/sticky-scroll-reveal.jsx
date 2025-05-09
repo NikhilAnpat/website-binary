@@ -47,14 +47,14 @@ export const StickyScroll = ({ content, contentClassName }) => {
   }, [handleLeftWheel, isDesktop]);
 
   return (
-    <div className="relative bg-[#00042A] block leading-[1.2] overflow-x-auto no-scrollbar ">
-      <div className="ml-0 lg:ml-[140px] pl-0 lg:pl-[20px] pt-[20px] lg:pt-[40px] w-full lg:w-100 mx-auto block rounded-[12px] overflow-x-auto ">
+    <div className="relative bg-[#00042A] block leading-[1.2] flex justify-center  overflow-x-auto no-scrollbar ">
+      <div className="ml-0 lg:ml-[140px]  lg:pl-[20px] pt-[20px] lg:pt-[40px] w-full lg:w-100 mx-auto block rounded-[12px] overflow-x-auto ">
         {/*main div */}
         <div className="flex flex-col lg:flex-row flex-wrap items-start gap-[20px] lg:gap-[30px] bg-[rgba(249,249,249,0.0)] ">
           {/*left content */}
           <div
             ref={leftRef}
-            className="w-full lg:max-w-[41%] pt-0 pr-0 pl-[5px] lg:pl-0 lg:pr-[30px] sticky lg:top-[100px] flex flex-1 items-center justify-center text-left mb-[30px] lg:mb-0"
+            className="w-full lg:max-w-[41%] pt-0 px-[15px]  lg:pl-0 lg:pr-[30px] sticky lg:top-[100px] flex flex-1 items-center justify-center text-left mb-[30px] lg:mb-0"
           >
             <div className="flex flex-col gap-y-[24px] lg:gap-y-[40px] w-full ">
               <div className="font-semibold block box-border tracking-0 text-[clamp(1rem,_5vw,_2rem)] text-[1.5rem] lg:text-[2.8rem] leading-[1.2] ">
@@ -85,9 +85,9 @@ export const StickyScroll = ({ content, contentClassName }) => {
           {/*right content */}
           <div
             ref={rightRef}
-            className="w-full lg:max-w-[calc(58%-30px)] bg-[#00042A] pb-[20px] lg:pb-[30px] pr-[4px] lg:pr-0 flex h-auto lg:h-[100vh] items-center justify-center lg:items-start lg:justify-start md:items-center md:justify-center text-left overflow-y-auto no-scrollbar"
+            className="w-full lg:max-w-[calc(58%-30px)] bg-[#00042A] lg:pb-[30px] h-screen pr-[4px] lg:pr-0 flex h-auto items-center justify-center lg:items-start lg:justify-start md:items-center md:justify-center text-left overflow-y-auto no-scrollbar"
           >
-            <div className="flex flex-col items-center justify-center lg:items-start lg:justify-start md:items-center md:justify-center gap-y-[24px] lg:gap-y-[40px] w-full">
+            <div className="flex flex-col items-center justify-center mt-auto pb-[20px] lg:items-start lg:justify-start md:items-center md:justify-center gap-y-[24px] lg:gap-y-[40px] w-full">
               {content.map((item, index) => {
                 const motionDivProps = {
                   key: item.title + index,

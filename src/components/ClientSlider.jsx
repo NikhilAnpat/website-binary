@@ -1,6 +1,7 @@
 import React from 'react';
 import Slider from 'react-slick';
 import './Clientslider.css';
+import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 
 const clients = [
   {
@@ -39,7 +40,27 @@ const sliderSettingsLTR = {
   cssEase: 'linear',
   rtl: false,
   arrows: false,
-  pauseOnHover: false
+  pauseOnHover: false,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        centerMode: true,
+        centerPadding: '30px'
+      }
+    },
+    {
+      breakpoint: 640,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        centerMode: true,
+        centerPadding: '20px'
+      }
+    }
+  ]
 };
 
 const sliderSettingsRTL = {
@@ -49,19 +70,19 @@ const sliderSettingsRTL = {
 
 const ClientSlider = () => {
   return (
-    <div className="fullscreen-slider">
-      <div className="content">
-        <h2 className="title">CLIENTS ACROSS INDUSTRIES</h2>
-        <h1 className="subtitle">Full-Service Web Design Agency</h1>
-        <p className="description">
+    <div className="fullscreen-slider ">
+      <div className="content ">
+        <h2 className="title text-[1rem] lg:text-[1.2rem] ">CLIENTS ACROSS INDUSTRIES</h2>
+        <h1 className="subtitle text-[clamp(1rem,_5vw,_2rem)] text-[1.5rem] lg:text-[2.8rem] leading-[1.2] font-semibold">Full-Service Web Design Agency</h1>
+        <p className="description leading-[1.5] font-normal font-sans text-base lg:text-xl">
           Lorem ipsum dolor sit amet consectetur. <br />
           <strong>We create custom solutions that grow brands online</strong>
         </p>
       </div>
-      <div className="slider-section">
+      <div className="slider-section ">
         <Slider {...sliderSettingsLTR} className="client-slider">
           {clients.map((client, index) => (
-            <div key={index} className="client-box">
+            <div key={index} className="client-box ">
               <img src={client.logo} alt={client.name} className="client-logo" />
               <p>{client.name}</p>
             </div>
@@ -79,8 +100,38 @@ const ClientSlider = () => {
       </div>
 
       <div className="button-container">
-        <button className="glow-btn">Get Started</button>
+        
+          <a className="glow-btn">
+            <p>Explore All Services </p>
+
+            <MdOutlineKeyboardArrowRight size={20} />
+          </a>
+        
       </div>
+      <div
+        className="absolute flex justify-center opacity-45 z-[-5]"
+        style={{
+          content: '""',
+          right: '-10%',
+          left: '30%',
+          top: '-70%',
+          bottom: '-40%',
+          background: 'radial-gradient(ellipse at center, #9536e5 0, rgba(149, 54, 229, 0) 74%, rgba(149, 54, 229, 0) 100%)'
+        }}
+      ></div>
+      <div
+        className="absolute opacity-45 z-[-1]"
+        style={{
+          content: '""',
+          left: '-10%',
+          right: '30%',
+          top: '-30%',
+          bottom: '-30%',
+          background: 'radial-gradient(ellipse at center, #00b9ff 0, rgba(0, 185, 255, 0) 70%, rgba(0, 185, 255, 0) 100%)'
+        }}
+      ></div>
+
+
     </div>
   );
 };

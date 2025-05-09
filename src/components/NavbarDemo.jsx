@@ -15,11 +15,12 @@ import TypewriterEffectSmoothDemo from "./TypewriterEffectSmoothDemo";
 import { GlobeDemo } from "./GlobeDemo";
 import ClientSlider from "./ClientSlider";
 import { StickyScrollRevealDemo } from "./StickyScrollRevealDemo";
+import { ProjectDesigns } from "./ui/ProjectDesigns";
+import Content from '../components/ui/Content.jsx';
 
 
 
-
- function NavbarDemo() {
+function NavbarDemo() {
   const navItems = [
     {
       name: "Features",
@@ -39,58 +40,58 @@ import { StickyScrollRevealDemo } from "./StickyScrollRevealDemo";
 
   return (
     <>
-    <div className=" relative w-full mt-0">
-      <Navbar>
-      {/* <h2 className="text-white text-cente">this</h2> */}
-        {/* Desktop Navigation */}
-        <NavBody>
-          <NavbarLogo />
-          <NavItems items={navItems} />
-          <div className="flex items-center gap-4">
-            <NavbarButton variant="secondary" >Login</NavbarButton>
-            <NavbarButton variant="primary">Book a call</NavbarButton>
-          </div>
-        </NavBody>
-
-        {/* Mobile Navigation */}
-        <MobileNav>
-          <MobileNavHeader>
+      <div className=" bg-gradient-to-b from-[#000A32] to-gray-800   w-full mt-0">
+        <Navbar>
+          {/* <h2 className="text-white text-cente">this</h2> */}
+          {/* Desktop Navigation */}
+          <NavBody>
             <NavbarLogo />
-            <MobileNavToggle
-              isOpen={isMobileMenuOpen}
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} />
-          </MobileNavHeader>
-
-          <MobileNavMenu isOpen={isMobileMenuOpen} onClose={() => setIsMobileMenuOpen(false)}>
-            {navItems.map((item, idx) => (
-              <a
-                key={`mobile-link-${idx}`}
-                href={item.link}
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="relative text-neutral-600 dark:text-neutral-300">
-                <span className="block">{item.name}</span>
-              </a>
-            ))}
-            <div className="flex w-full flex-col gap-4">
-              <NavbarButton
-                onClick={() => setIsMobileMenuOpen(false)}
-                variant="primary"
-                className="w-full">
-                Login
-              </NavbarButton>
-              <NavbarButton
-                onClick={() => setIsMobileMenuOpen(false)}
-                variant="primary"
-                className="w-full">
-                Book a call
-              </NavbarButton>
+            <NavItems items={navItems} />
+            <div className="flex items-center gap-4">
+              <NavbarButton variant="secondary" >Login</NavbarButton>
+              <NavbarButton variant="primary">Book a call</NavbarButton>
             </div>
-          </MobileNavMenu>
-        </MobileNav>
-      </Navbar>
-      <DummyContent />
-      {/* Navbar */}
-    </div>
+          </NavBody>
+
+          {/* Mobile Navigation */}
+          <MobileNav>
+            <MobileNavHeader>
+              <NavbarLogo />
+              <MobileNavToggle
+                isOpen={isMobileMenuOpen}
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} />
+            </MobileNavHeader>
+
+            <MobileNavMenu isOpen={isMobileMenuOpen} onClose={() => setIsMobileMenuOpen(false)}>
+              {navItems.map((item, idx) => (
+                <a
+                  key={`mobile-link-${idx}`}
+                  href={item.link}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="relative text-neutral-600 dark:text-neutral-300">
+                  <span className="block">{item.name}</span>
+                </a>
+              ))}
+              <div className="flex w-full flex-col gap-4">
+                <NavbarButton
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  variant="primary"
+                  className="w-full">
+                  Login
+                </NavbarButton>
+                <NavbarButton
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  variant="primary"
+                  className="w-full">
+                  Book a call
+                </NavbarButton>
+              </div>
+            </MobileNavMenu>
+          </MobileNav>
+        </Navbar>
+        <DummyContent />
+        {/* Navbar */}
+      </div>
     </>
   );
 }
@@ -98,28 +99,26 @@ import { StickyScrollRevealDemo } from "./StickyScrollRevealDemo";
 
 
 const DummyContent = () => {
- 
+
   return (
     <>
-      <section
-        className="relative h-screen text-white flex items-center justify-center"
-        
-      >
-        <div className="absolute inset-0 bg-gradient-to-b from-black to-gray-800 opacity-77"  > <GlobeDemo/></div>
-       
-       
-        
-      
+      <section className="relative min-h-screen text-white  flex items-center justify-center">
+        <div className="absolute inset-0 opacity-77"> <GlobeDemo /></div>
       </section>
-      <section className="relative h-screen text-white flex items-center justify-center">
-      <ClientSlider/>
+      <section>
+        <ProjectDesigns />
+      </section>
+      <section className="relative  text-white flex items-center justify-center">
+        <ClientSlider />
       </section>
       <section className="relative min-h-screen w-full h-full">
-  <StickyScrollRevealDemo />
-</section>
+        <StickyScrollRevealDemo />
+      </section>
 
-
-     <Footer/>
+      
+        
+      <Content/>
+      <Footer />
     </>
   );
 };
