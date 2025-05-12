@@ -54,7 +54,7 @@ const Footer = () => {
         </div>
 
         {/* Floating chat icon bottom-right */}
-        <div className='flex flex-row justify-between p-[10px] '>
+        <div className='flex flex-row justify-between p-[20px] '>
               <div className="absolute bottom-4 right-4 z-20">
                 <button className="bg-yellow-400 hover:bg-yellow-300 h-12 w-12 rounded-full flex items-center justify-center shadow-lg mb-6">
                   <svg viewBox="0 0 32 32" width="22" height="22" fill="black">
@@ -62,12 +62,12 @@ const Footer = () => {
                   </svg>
                 </button>
               </div>
-              <div className=" gap-4 flex flex-row   text-xl py-5 text-white w-1/2  ">
-                {/* <FloatingDockDemo  /> */}
+              <div className='mb-[30px]'>
+                <FloatingDockDemo  />
 
-                <FaXTwitter className="hover:opacity-80 hover:text-yellow-400" />
+                {/* <FaXTwitter className="hover:opacity-80 hover:text-yellow-400" />
                 <FaInstagram className="hover:opacity-80 hover:text-yellow-400" />
-                <FaTiktok className="hover:opacity-80 hover:text-yellow-400" />
+                <FaTiktok className="hover:opacity-80 hover:text-yellow-400" /> */}
 
               </div>
           </div>

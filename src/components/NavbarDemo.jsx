@@ -19,7 +19,6 @@ import { ProjectDesigns } from "./ui/ProjectDesigns";
 import Content from '../components/ui/Content.jsx';
 
 
-
 function NavbarDemo() {
   const navItems = [
     {
@@ -102,22 +101,26 @@ const DummyContent = () => {
 
   return (
     <>
-      <section className="relative min-h-screen text-white  flex items-center justify-center">
-        <div className="absolute inset-0 opacity-77"> <GlobeDemo /></div>
-      </section>
+      <section className="relative min-h-screen text-white   items-center justify-center">
+      
+          <div className="absolute inset-0 opacity-77"> <GlobeDemo /></div>
+     </section>
+
       <section>
         <ProjectDesigns />
       </section>
+
       <section className="relative  text-white flex items-center justify-center">
         <ClientSlider />
       </section>
+
       <section className="relative min-h-screen w-full h-full">
         <StickyScrollRevealDemo />
       </section>
 
-      
-        
-      <Content/>
+
+
+      <Content />
       <Footer />
     </>
   );
