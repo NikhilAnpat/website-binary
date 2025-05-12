@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import '../ui/Content.css';
+
+
 
 const caseStudiesData = {
   hp: {
@@ -49,7 +50,7 @@ const caseStudiesData = {
       "https://www.digitalsilk.com/wp-content/uploads/2022/11/doForms-logo-dark-blue.svg",
     bgImage:
       "https://www.digitalsilk.com/wp-content/uploads/2022/11/Web-design-case-study-Doforms.jpg",
-    caseStudyLink: "READ DOFORMS CASE STUDY",
+    caseStudyLink: "READ doFORMS CASE STUDY",
     logoWidth: "160",
     logoHeight: "53",
   },
@@ -66,7 +67,7 @@ const caseStudiesData = {
       "https://www.digitalsilk.com/wp-content/uploads/2022/11/FieldEdge-logo-dark-blue.svg",
     bgImage:
       "https://www.digitalsilk.com/wp-content/uploads/2022/11/fieldedge-main.jpg",
-    caseStudyLink: "READ FIELDEDGE CASE STUDY",
+    caseStudyLink: "READ FieldEdge CASE STUDY",
     logoWidth: "160",
     logoHeight: "39",
   },
@@ -197,11 +198,11 @@ const Content = () => {
                       <div className="flex flex-col gap-6 mt-12 w-full max-w-[360px] mx-auto px-4">
                         <motion.button
                           whileHover={{ scale: 1.02 }}
-                          className="relative px-12 py-4 text-lg font-bold tracking-[0.15em] text-blue-600 uppercase transition-all duration-300 overflow-hidden group w-full"
+                          className="relative  py-4 text-lg font-bold text-blue-600  transition-all duration-300 overflow-hidden group w-full"
                         >
-                          <span className="relative z-10 flex items-center justify-center text-base transition-colors duration-300 group-hover:text-white whitespace-nowrap sm:text-lg">
+                          <span className="relative z-10 flex items-center justify-center  text-[14px] md:text-[18px] transition-colors duration-300 group-hover:text-white whitespace-nowrap sm:text-md">
                             {data.caseStudyLink}
-                            <span className="inline-block ml-3 transition-transform transform group-hover:translate-x-1">
+                            <span className="inline-block ml-2 transition-transform transform group-hover:translate-x-1">
                               →
                             </span>
                           </span>
@@ -216,7 +217,7 @@ const Content = () => {
 
                         <motion.button
                           whileHover={{ scale: 1.02 }}
-                          className="relative px-12 py-4 text-lg font-bold tracking-[0.15em] text-blue-600 uppercase transition-all duration-300 overflow-hidden group w-full"
+                          className="relative py-4 text-lg font-bold text-blue-600 uppercase transition-all duration-300 overflow-hidden group w-full"
                         >
                           <span className="relative z-10 flex items-center justify-center text-base transition-colors duration-300 group-hover:text-white whitespace-nowrap sm:text-lg">
                             START YOUR PROJECT
@@ -370,7 +371,7 @@ const Content = () => {
                 </div>
 
                 {/* Action Buttons */}
-                <div className="flex flex-col 2xl:flex-row gap-6 2xl:gap-24 pt-5 ">
+                <div className="flex flex-col xl:flex-row gap-6 2xl:gap-24 pt-5 ">
                   {/* Button 1 */}
 
 
@@ -393,7 +394,8 @@ const Content = () => {
                     <span className="relative z-10 flex items-center justify-center 
                       px-2 sm:px-[5px] 
                       text-[10px] sm:text-[12px] md:text-[20px] 
-                              font-bold whitespace-nowrap transition-colors duration-300 group-hover:text-white">
+                      text-sm sm:text-base md:text-lg 
+                      font-bold whitespace-nowrap transition-colors duration-300 group-hover:text-white">
                       {caseStudiesData[activeCase].caseStudyLink} {/* or START YOUR PROJECT */}
                       <span className="ml-2 transition-transform transform group-hover:translate-x-1">→</span>
                     </span>
@@ -401,26 +403,31 @@ const Content = () => {
 
 
                   {/* Button 2 */}
-
                   <motion.button
                     whileHover={{ scale: 1.02 }}
-                    className="relative inline-flex items-center justify-center py-4 text-base tracking-[0.0]
-                    uppercase transition-all duration-300 group overflow-hidden text-blue-600 border-[3px]"
+                    className="relative inline-flex items-center justify-center 
+                      py-2 sm:py-3 md:py-4 
+                          text-sm sm:text-base md:text-lg 
+                      tracking-normal sm:tracking-tight 
+                            uppercase transition-all duration-300 group overflow-hidden text-blue-600 border-[3px]"
                     style={{
                       borderImage: "linear-gradient(7deg, #009cff 50%, #522ef4 65%, #9537e3 80%)",
                       borderImageSlice: 1,
                     }}
                   >
-                    <span className="relative z-10 flex p-[5px] items-center justify-center sm:text-[12px] md:text-[20px]  sm:tracking-tight  font-bold whitespace-nowrap transition-colors duration-300 group-hover:text-white">
-                      START YOUR PROJECT
-                      <span className="ml-2 transition-transform transform group-hover:translate-x-1">→</span>
-                    </span>
                     {/* Background Fill on Hover */}
                     <span className="absolute inset-0 w-0 group-hover:w-full transition-all duration-300 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 -z-10" />
 
                     {/* Button Content */}
-
+                    <span className="relative z-10 flex items-center justify-center 
+                      px-2 sm:px-[5px] 
+                      text-[10px] sm:text-[12px] md:text-[20px] 
+                      font-bold whitespace-nowrap transition-colors duration-300 group-hover:text-white">
+                      START YOUR PROJECT
+                      <span className="ml-2 transition-transform transform group-hover:translate-x-1">→</span>
+                    </span>
                   </motion.button>
+
 
 
                 </div>

@@ -1,6 +1,74 @@
 import React, { Suspense } from "react";
 import { motion } from "motion/react";
 import TypewriterEffectSmoothDemo from "./TypewriterEffectSmoothDemo";
+import Slider from 'react-slick';
+import './GlobeDemo.css';
+
+
+const clients = [
+  {
+    name: 'Google',
+    logo: './src/img/g.png'
+  },
+  {
+    name: 'Amazon',
+    logo: './src/img/a.png'
+  },
+  {
+    name: 'Microsoft',
+    logo: 'https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg'
+  },
+  {
+    name: 'Apple',
+    logo: 'https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg'
+  },
+  {
+    name: 'Facebook',
+    logo: 'https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg'
+  },
+  {
+    name: 'Tesla',
+    logo: 'https://upload.wikimedia.org/wikipedia/commons/b/bd/Tesla_Motors.svg'
+  }
+];
+
+const sliderSettingsLTR = {
+  infinite: true,
+  speed: 5000,
+  slidesToShow: 5,
+  slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 0,
+  cssEase: 'linear',
+  rtl: false,
+  arrows: false,
+  pauseOnHover: false,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        centerMode: true,
+        centerPadding: '30px'
+      }
+    },
+    {
+      breakpoint: 640,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        centerMode: true,
+        centerPadding: '20px'
+      }
+    }
+  ]
+};
+
+const sliderSettingsRTL = {
+  ...sliderSettingsLTR,
+  rtl: true
+};
 
 const World = React.lazy(() => import("../components/ui/globe").then((module) => ({ default: module.World })));
 
@@ -394,30 +462,31 @@ export function GlobeDemo() {
   ];
 
   return (
-    <div
-      className="flex flex-row pt-[20px] items-center justify-center bg-gradient-to-b from-[#000A32] to-gray-800 bg-[#1E3075] relative w-full h-full">
+    <>
+      <div className="flex flex-row pt-[20px] items-center justify-center bg-gradient-to-b from-[#000A32] to-gray-800 bg-[#1E3075] relative w-full h-full">
 
-      <div
-        className="max-w-7xl mx-auto w-full relative overflow-hidden h-full md:h-[45rem] px-4">
-        <div className="absolute pb-1  w-full h-72 md:h-full z-0 opacity-60">
-          <Suspense fallback={<div>Loading globe...</div>}>
-            <World data={sampleArcs} globeConfig={globeConfig} />
-          </Suspense>
-        </div>
-        <motion.div
-          initial={{
-            opacity: 0.9,
-            y: 20,
-          }}
-          animate={{
-            opacity: 0.8,
-            y: 0,
-          }}
-          transition={{
-            duration: 1,
-          }}
-          className="div relative z-10">
-          
+        <div className="max-w-7xl mx-auto w-full relative mb-[20px]    md:h-[48rem] p-4">
+
+          <div className="absolute pb-1  w-full h-72 md:h-full z-0 opacity-60">
+            <Suspense fallback={<div>Loading globe...</div>}>
+              <World data={sampleArcs} globeConfig={globeConfig} />
+            </Suspense>
+          </div>
+
+          <motion.div
+            initial={{
+              opacity: 0.9,
+              y: 20,
+            }}
+            animate={{
+              opacity: 0.8,
+              y: 0,
+            }}
+            transition={{
+              duration: 1,
+            }}
+            className="div relative z-10">
+
             <h1
               className="text-center text-2xl mt-[10px] md:text-4xl font-bold text-black dark:text-white">
               <TypewriterEffectSmoothDemo />
@@ -462,12 +531,24 @@ export function GlobeDemo() {
               This globe is interactive and
               don't forget to share it. :)
             </p>
-          
-        </motion.div>
-        <div
-          className="absolute pt-4 w-full top-0 inset-x-0 h-40 pointer-events-none 
+
+
+
+          </motion.div>
+          <div
+            className="absolute pt-4 w-full top-0 inset-x-0 h-40 pointer-events-none 
           select-none from-transparent dark:to-black to-white z-40" />
+          <Slider {...sliderSettingsRTL} className="client-slider-new">
+            {clients.map((client, index) => (
+              <div key={index} className="client-box-new">
+                <img src={client.logo} alt={client.name} className="client-logo-new" />
+                <p className='client-name-new'>{client.name}</p>
+              </div>
+            ))}
+          </Slider>
+        </div>
+
       </div>
-    </div>
+    </>
   );
 }
