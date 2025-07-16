@@ -9,11 +9,11 @@ import {
   MobileNavToggle,
   MobileNavMenu,
 } from "../components/ui/resizable-navbar";
-import { useState } from "react";
+import { useState, lazy, Suspense } from "react";
 import Footer from "./Footer";
 import TypewriterEffectSmoothDemo from "./TypewriterEffectSmoothDemo";
 import { GlobeDemo } from "./GlobeDemo";
-import ClientSlider from "./ClientSlider";
+const ClientSlider = lazy(() => import("./ClientSlider"));
 import { StickyScrollRevealDemo } from "./StickyScrollRevealDemo";
 import { ProjectDesigns } from "./ui/ProjectDesigns";
 import Content from '../components/ui/Content.jsx';
@@ -35,6 +35,8 @@ function NavbarDemo() {
     },
   ];
 
+
+  
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
@@ -110,8 +112,10 @@ const DummyContent = () => {
         <ProjectDesigns />
       </section>
 
-      <section className="relative  text-white flex items-center justify-center">
-        <ClientSlider />
+     <section className="relative text-white flex items-center justify-center">
+        <Suspense fallback={<div className="text-white">Loading clients...</div>}>
+          <ClientSlider />
+        </Suspense>
       </section>
 
       <section className="relative min-h-screen w-full h-full">

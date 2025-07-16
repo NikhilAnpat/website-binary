@@ -59,30 +59,19 @@ const Footer = () => {
                 </button>
               </div>
               <div className='mb-[30px]'>
-                <FloatingDockDemo  />
-
-                {/* <FaXTwitter className="hover:opacity-80 hover:text-yellow-400" />
-                <FaInstagram className="hover:opacity-80 hover:text-yellow-400" />
-                <FaTiktok className="hover:opacity-80 hover:text-yellow-400" /> */}
-
+                <FloatingDockDemo/>
               </div>
           </div>
-       
-
         {/* Background Text */}
         <h1 className="footer-title-background">
           Interview Coder
         </h1>
-
-
         {/* Copyright */}
-
       </footer>
       <div className="bg-[#00042A] text-center text-gray-500 text-sm py-1">
         © 2023 Interview Coder. All rights reserved.
       </div>
     </>
-
   );
 };
 

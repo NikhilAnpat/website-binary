@@ -93,7 +93,6 @@ export const ProjectDesigns = () => {
                             <div className="font-bold uppercase mb-[7px]  text-lg transition-colors duration-300 ease-in-out">Featured</div>
                             {activeButton === 'featured' && <MdKeyboardArrowDown className={getIconStyles('featured')} size={25} />}
                         </div>
-
                         <div className={`${getButtonStyles('b2b')} ${getButtonAnimationClass(1)}`} onClick={() => handleButtonClick('b2b')}>
                             <div className={`text-2xl mb-4 ${getIconStyles('b2b')}`}><PiHandshakeLight size={35} /></div>
                             <div className="font-bold uppercase mb-[7px]  text-lg transition-colors duration-300 ease-in-out">B2B</div>
@@ -115,11 +114,10 @@ export const ProjectDesigns = () => {
                 </div>
                 {/*project section */}
                 <div className="">
-                   <FeaturedProject1 category={activeButton} />
-
+                   <FeaturedProject1 category={activeButton} /> 
                 </div>
-
             </div>
         </div>
+
     )
 }

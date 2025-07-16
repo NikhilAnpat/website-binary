@@ -15,14 +15,14 @@ export function FloatingDockDemo() {
       icon: (
         <IconBrandInstagram className="h-[3rem] w-[3rem] text-neutral-500 dark:text-neutral-300" />
       ),
-      href: "#",
+      href: "https://www.instagram.com",
     },
     {
       title: "LinkedIn",
       icon: (
         <IconBrandLinkedin className="h-[3rem] w-[3rem] text-neutral-500 dark:text-neutral-300" />
       ),
-      href: "#", 
+      href: "https://www.linkedin.com",
     },
     
    
@@ -31,14 +31,14 @@ export function FloatingDockDemo() {
       icon: (
         <IconBrandX className="h-[3rem] w-[3rem] text-neutral-500 dark:text-neutral-300" />
       ),
-      href: "#",
+      href: "https://www.twitter.com",
     },
     {
       title: "GitHub",
       icon: (
         <IconBrandGithub className="h-[3rem] w-[3rem] text-neutral-500 dark:text-neutral-300" />
       ),
-      href: "#",
+      href: "https://github.com",
     },
   ];
 

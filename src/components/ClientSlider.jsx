@@ -83,7 +83,7 @@ const ClientSlider = () => {
         <Slider {...sliderSettingsLTR} className="client-slider">
           {clients.map((client, index) => (
             <div key={index} className="client-box ">
-              <img src={client.logo} alt={client.name} className="client-logo" />
+              <img src={client.logo} alt={client.name} className="client-logo" loading="lazy" />
               <p>{client.name}</p>
             </div>
           ))}
@@ -92,7 +92,7 @@ const ClientSlider = () => {
         <Slider {...sliderSettingsRTL} className="client-slider">
           {clients.map((client, index) => (
             <div key={index} className="client-box">
-              <img src={client.logo} alt={client.name} className="client-logo" />
+              <img src={client.logo} alt={client.name} className="client-logo" loading="lazy" />
               <p className='client-name'>{client.name}</p>
             </div>
           ))}
@@ -118,7 +118,9 @@ const ClientSlider = () => {
           bottom: '-40%',
           background: 'radial-gradient(ellipse at center, #9536e5 0, rgba(149, 54, 229, 0) 80%, rgba(149, 54, 229, 0) 100%)'
         }}
-      ></div>
+      >
+        
+      </div>
       <div
         className="absolute opacity-45 z-[-1]"
         style={{

@@ -1,23 +1,25 @@
 import './App.css'
-
+import React, { useState, lazy, Suspense } from 'react';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import Footer from './components/Footer'
-import NavbarDemo from './components/NavbarDemo'
+const  NavbarDemo = lazy(() => import('./components/NavbarDemo'));
+
+const LoadingSpinner = () => (
+  <div className="flex flex-col items-center justify-center h-screen text-white">
+    <div className="w-12 h-12 border-4 border-white border-t-transparent rounded-full animate-spin mb-4"></div>
+    <p className="text-lg">Loading...</p>
+  </div>
+);
 
 function App() {
   return (
     <>
-      <div className="gradient-bg ">
-        <NavbarDemo />
-        {/* Add your content here */}
-
-        
-        
-      </div>
+      <Suspense  fallback={<LoadingSpinner />}>
+      <NavbarDemo />
+    </Suspense>
     </>
   )
-}
+} 
 
 export default App

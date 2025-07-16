@@ -1,6 +1,6 @@
-import React, { Suspense } from "react";
+import React, { Suspense, useState  } from "react";
 import { motion } from "motion/react";
-import TypewriterEffectSmoothDemo from "./TypewriterEffectSmoothDemo";
+const TypewriterEffectSmoothDemo = React.lazy(() => import('./TypewriterEffectSmoothDemo'));
 import Slider from 'react-slick';
 import './GlobeDemo.css';
 
@@ -541,7 +541,7 @@ export function GlobeDemo() {
           <Slider {...sliderSettingsRTL} className="client-slider-new">
             {clients.map((client, index) => (
               <div key={index} className="client-box-new">
-                <img src={client.logo} alt={client.name} className="client-logo-new" />
+                <img src={client.logo} alt={client.name} className="client-logo-new"  loading="lazy"/>
                 <p className='client-name-new'>{client.name}</p>
               </div>
             ))}
