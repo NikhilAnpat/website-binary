@@ -18,17 +18,13 @@ const Footer = () => {
               </div>
               <h1 className="text-lg font-semibold">Interview Coder</h1>
             </div>
-
             {/* Description */}
             <p className="text-gray-300 pr-4 pt-2 text-sm leading-relaxed">
               Interview Coder is a desktop app designed to help job seekers ace technical interviews
               by providing real-time assistance with coding questions.
             </p>
-
             {/* Social Icons */}
-
           </div>
-
           {/* Right Section: Legal and Pages */}
           <div className="grid grid-cols-2 p-5 items-left gap-10 text-sm">
             {/* Legal */}

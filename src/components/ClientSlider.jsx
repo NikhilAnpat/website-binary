@@ -116,7 +116,7 @@ const ClientSlider = () => {
           left: '30%',
           top: '-70%',
           bottom: '-40%',
-          background: 'radial-gradient(ellipse at center, #9536e5 0, rgba(149, 54, 229, 0) 74%, rgba(149, 54, 229, 0) 100%)'
+          background: 'radial-gradient(ellipse at center, #9536e5 0, rgba(149, 54, 229, 0) 80%, rgba(149, 54, 229, 0) 100%)'
         }}
       ></div>
       <div
@@ -130,8 +130,6 @@ const ClientSlider = () => {
           background: 'radial-gradient(ellipse at center, #00b9ff 0, rgba(0, 185, 255, 0) 70%, rgba(0, 185, 255, 0) 100%)'
         }}
       ></div>
-
-
     </div>
   );
 };

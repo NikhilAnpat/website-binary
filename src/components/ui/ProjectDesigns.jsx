@@ -4,7 +4,7 @@ import { PiHandshakeLight } from "react-icons/pi";
 import { TfiWallet } from "react-icons/tfi";
 import { PiShoppingCartLight } from "react-icons/pi";
 import { MdKeyboardArrowDown } from "react-icons/md";
-import { FeaturedProject } from "./featuredProject";
+import { FeaturedProject1 } from "./FeaturedProject1";
 
 export const ProjectDesigns = () => {
     const [activeButton, setActiveButton] = useState('featured');
@@ -106,19 +106,17 @@ export const ProjectDesigns = () => {
                             <div className="font-bold uppercase mb-[7px] text-lg transition-colors duration-300 ease-in-out">Ecommerce</div>
                             {activeButton === 'ecommerce' && <MdKeyboardArrowDown className={getIconStyles('ecommerce')} size={25} />}
                         </div>
-
                         <div className={`${getButtonStyles('b2c')} ${getButtonAnimationClass(2)}`} onClick={() => handleButtonClick('b2c')}>
                             <div className={`text-2xl mb-4 ${getIconStyles('b2c')}`}><TfiWallet size={29} /></div>
                             <div className="font-bold uppercase mb-[7px]  text-lg transition-colors duration-300 ease-in-out">B2C</div>
                             {activeButton === 'b2c' && <MdKeyboardArrowDown className={getIconStyles('b2c')} size={25} />}
-                        </div>
-
-                       
+                        </div>                       
                     </div>
                 </div>
                 {/*project section */}
                 <div className="">
-                    <FeaturedProject />
+                   <FeaturedProject1 category={activeButton} />
+
                 </div>
 
             </div>

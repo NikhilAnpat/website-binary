@@ -17,6 +17,8 @@
   user-select: none;
   z-index: 0;
 }
+
+
 @media (max-width: 768px) {
   .footer-title-background {
     font-size: 4rem;
