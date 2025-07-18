@@ -30,7 +30,7 @@ export const FeaturedProject1 = ({ category }) => {
     ecommerce: ['project-1.png', 'projet-2.png', 'project-3.png', 'project-4.png'],
   };
 
-  const projectDetails = [
+  const projectDetails = [  
   {
     img: 'project-1.png',
     logo: 'Remax.png',
@@ -43,9 +43,8 @@ export const FeaturedProject1 = ({ category }) => {
     img: 'projet-2.png',
     logo: 'northwesternUniverncity.png',
     centerImg: 'https://www.digitalsilk.com/wp-content/uploads/2023/09/custom-web-design-northwestern-university-full-1.jpg.webp',
-    title: 'Educational Solutions for Modern Campuses',
-    description:
-      'Northwestern University streamlined operations with a robust learning and campus management system.'
+    title: 'Educational Solutions for Modern Campuses and more',
+    description: 'Northwestern University streamlined operations with a robust learning and campus management system.'
   },
   {
     img: 'project-3.png',
@@ -65,13 +64,11 @@ export const FeaturedProject1 = ({ category }) => {
   },
   // ...and so on for other projects
 ];
-
-
   const currentImages = images[category] || [];
   const displayImages = showMore ? currentImages : currentImages.slice(0, 6);
 
   const renderCard = (img) => (
-    <div key={img} onClick={() => handleCardClick(img)} className='w-full cursor-pointer relative group'>
+    <div key={img} onClick={() => handleCardClick(img)} className='w-[97%] cursor-pointer relative group'>
       <img src={`../src/assets/${img}`} className="w-full h-auto" />
       <div className='absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300'>
         <div className='bg-black/50 rounded-full lg:w-[200px] lg:h-[200px] w-[100px] h-[100px] flex items-center justify-center'>
@@ -138,8 +135,7 @@ export const FeaturedProject1 = ({ category }) => {
               />
             ))}
           </div>
-
-                      {/* Center: Scrollable image */}
+            {/* Center: Scrollable image */}
             <div className="w-full h-[800px] lg:w-3/5 p-4 max-h-[1000px] bg-blur overflow-y-auto scroll-smooth">
               <img
                 src={selectedImage.centerImg.startsWith('http') ? selectedImage.centerImg : `../src/assets/${selectedImage.centerImg}`}
@@ -147,8 +143,6 @@ export const FeaturedProject1 = ({ category }) => {
                 className="w-full h-auto rounded-lg object-cover"
               />
             </div>
-
-
           {/* Right Info Card */}
           <div className="w-full lg:w-1/4 bg-[#121a2c] p-6 flex flex-col justify-between">
             <div>

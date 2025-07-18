@@ -1,7 +1,9 @@
-import React from 'react';
 import Slider from 'react-slick';
 import './Clientslider.css';
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
+
+import React, { memo } from "react";
+
 
 const clients = [
   {
@@ -135,4 +137,5 @@ const ClientSlider = () => {
     </div>
   );
 };
-export default ClientSlider;
+
+export default memo(ClientSlider);

@@ -2,7 +2,7 @@
 import React from "react";
 import { StickyScroll } from "./ui/sticky-scroll-reveal";
 
-// Properly import image assets
+// Import image assets
 import card1 from "../assets/card1.svg";
 import card2 from "../assets/card2.svg";
 import card3 from "../assets/card3.svg";
@@ -18,54 +18,52 @@ const content = [
     description:
       "Work together in real time with your team, clients, and stakeholders. Collaborate on documents, share ideas, and make decisions quickly.",
     content: (
-      <div className="flex h-full w-full items-center justify-center bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] text-white">
+      <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-cyan-500 to-emerald-500 text-white">
         Collaborative Editing
       </div>
     ),
     image: card1,
-    picture: picture1,
   },
   {
     title: "Real time changes",
     description:
       "See changes as they happen. Track every modification in real time and say goodbye to version chaos.",
     content: (
+      
       <div className="flex h-full w-full items-center justify-center text-white">
         <img
-          src={picture2}
+          src={picture1}
           width={350}
           height={350}
+          loading="lazy"
           className="h-full w-full object-contain"
-          alt="real time demo"
+          alt="Real-time changes demo"
         />
       </div>
     ),
     image: card2,
-    picture: picture2,
   },
   {
     title: "Version control",
     description:
       "Stay in sync with automatic updates and no stress of version mismatches. Our platform keeps your team aligned.",
     content: (
-      <div className="flex h-full w-full items-center justify-center bg-[linear-gradient(to_bottom_right,var(--orange-500),var(--yellow-500))] text-white">
+      <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-orange-500 to-yellow-500 text-white">
         Version control
       </div>
     ),
     image: card3,
-    picture: picture3,
   },
   {
     title: "Running out of content",
     description:
       "Keep your work flowing with rich collaboration tools, seamless design control, and a smooth content experience.",
     content: (
-      <div className="flex h-full w-full items-center justify-center bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] text-white">
+      <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-cyan-500 to-emerald-500 text-white">
         Running out of content
       </div>
     ),
     image: card4,
-    picture: picture4,
   },
 ];
 

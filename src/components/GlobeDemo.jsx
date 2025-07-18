@@ -522,7 +522,7 @@ export function GlobeDemo() {
               This globe is interactive and customizable. Have fun with it, and
               This globe is interactive and
               don't forget to share it. :)
-
+              
               This globe is interactive and customizable. Have fun with it, and
               This globe is interactive and customizable. Have fun with it, and
               This globe is interactive and customizable. Have fun with it, and
@@ -531,9 +531,6 @@ export function GlobeDemo() {
               This globe is interactive and
               don't forget to share it. :)
             </p>
-
-
-
           </motion.div>
           <div
             className="absolute pt-4 w-full top-0 inset-x-0 h-40 pointer-events-none 
@@ -547,7 +544,6 @@ export function GlobeDemo() {
             ))}
           </Slider>
         </div>
-
       </div>
     </>
   );
