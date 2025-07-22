@@ -535,14 +535,14 @@ export function GlobeDemo() {
           <div
             className="absolute pt-4 w-full top-0 inset-x-0 h-40 pointer-events-none 
           select-none from-transparent dark:to-black to-white z-40" />
-          <Slider {...sliderSettingsRTL} className="client-slider-new">
+      {/*    <Slider {...sliderSettingsRTL} className="client-slider-new">
             {clients.map((client, index) => (
               <div key={index} className="client-box-new">
                 <img src={client.logo} alt={client.name} className="client-logo-new"  loading="lazy"/>
                 <p className='client-name-new'>{client.name}</p>
               </div>
             ))}
-          </Slider>
+          </Slider> */} 
         </div>
       </div>
     </>

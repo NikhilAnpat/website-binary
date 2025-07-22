@@ -62,7 +62,43 @@ export const FeaturedProject1 = ({ category }) => {
     description:
       'We built a real-time analytics system for RE/MAX to monitor housing trends and agent performance.'
   },
-  // ...and so on for other projects
+
+    {
+    img: 'project-5.png',
+    logo: 'logimg.webp',
+    centerImg: 'remax-analytics.jpg',
+    title: 'Real Estate Analytics Dashboard',
+    description:
+      'We built a real-time analytics system for RE/MAX to monitor housing trends and agent performance.'
+  },
+
+   {
+    img: 'project-6.png',
+    logo: 'logoimg1.webp',
+    centerImg: 'remax-analytics.jpg',
+    title: 'Real Estate Analytics Dashboard',
+    description:
+      'We built a real-time analytics system for RE/MAX to monitor housing trends and agent performance.'
+  },
+   {
+    img: 'project-7.png',
+    logo: 'BangOlufsen_Logo.png',
+    centerImg: 'bo-center.jpg',
+    title: 'Luxury Electronics eCommerce Portal',
+    description:
+      'Bang & Olufsen enhanced their digital sales channel with a custom high-end shopping experience.'
+  },
+   {
+    img: 'project-8.png',
+    logo: 'Remax.png',
+    centerImg: 'bo-center.jpg',
+    title: 'Luxury Electronics eCommerce Portal',
+    description:
+      'Bang & Olufsen enhanced their digital sales channel with a custom high-end shopping experience.'
+  },
+
+  
+ 
 ];
   const currentImages = images[category] || [];
   const displayImages = showMore ? currentImages : currentImages.slice(0, 6);
@@ -78,7 +114,7 @@ export const FeaturedProject1 = ({ category }) => {
       <img
         src={`../src/assets/${projectDetails.find(p => p.img === img)?.logo}`}
         alt='Client Logo'
-        className='absolute bottom-[50px] left-[50px] w-[60px] h-[40px] lg:w-[90px] lg:h-[80px]'
+        className='absolute bottom-[50px] left-[50px] w-[90px] h-[40px] lg:w-[90px] lg:h-[80px]'
       />
     </div>
   );

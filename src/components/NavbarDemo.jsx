@@ -86,7 +86,6 @@ const NavbarDemo = () => {
           </MobileNavMenu>
         </MobileNav>
       </Navbar>
-
       <MemoizedDummyContent />
     </div>
   );
@@ -108,7 +107,7 @@ const DummyContent = () => {
     <section>
       <ProjectDesigns />
     </section>
-      </Suspense>
+      </Suspense> 
 
       <section className="relative text-white flex items-center justify-center">
         <Suspense fallback={<div className="text-white">Loading clients...</div>}>
