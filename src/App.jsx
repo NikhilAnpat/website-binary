@@ -1,17 +1,22 @@
 // App.js
 import './App.css';
 import React, { useState, useEffect, lazy, Suspense } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const NavbarDemo = React.memo(lazy(() => import('./components/NavbarDemo')));
+const Features = lazy(() => import('../src/components/pages/Features'));
+
+const Pricing = lazy(() => import('../src/components/pages/Pricing'));
+const Contact = lazy(() => import('../src/components/pages/Contact'));
 
 const LoadingProgress = ({ duration = 4 }) => {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
     const totalSteps = 100;
-    const intervalTime = (duration * 1000) / totalSteps; // e.g. 4000ms / 100 = 40ms
+    const intervalTime = (duration * 1000) / totalSteps;
 
     let step = 0;
     const interval = setInterval(() => {
@@ -32,11 +37,12 @@ const LoadingProgress = ({ duration = 4 }) => {
           className="bg-white h-full transition-all duration-50 ease-out text-black text-sm font-semibold flex items-center justify-center"
           style={{ width: `${progress}%` }}
         >
-          {progress}%
+         
         </div>
       </div>
       <div className="mt-3 text-sm text-gray-500">
-        {((progress / 100) * duration).toFixed(1)}s
+        {/* {((progress / 100) * duration).toFixed(1)}s */}
+        <span className='text-white-900 pl-7'>{progress}%</span>
       </div>
     </div>
   );
@@ -44,10 +50,16 @@ const LoadingProgress = ({ duration = 4 }) => {
 
 function App() {
   return (
-    <Suspense fallback={<LoadingProgress duration={4} />}>
-      <NavbarDemo />
+   <Suspense fallback={<LoadingProgress duration={4} />}>
+      <Routes>
+        <Route path="/" element={<NavbarDemo />} />
+        <Route path="/features" element={<Features />} />
+        <Route path="/pricing" element={<Pricing />} />
+        <Route path="/contact" element={<Contact />} />
+       
+      </Routes>
     </Suspense>
-  );
+  )
 }
 
 export default App;
