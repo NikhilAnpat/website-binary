@@ -98,8 +98,8 @@ const NavbarDemo = () => {
 const DummyContent = () => {
   return (
     <>
-      <section className="relative min-h-screen text-white items-center justify-center">
-        <Suspense fallback={<div className="text-white text-center py-6">Loading GlobeDemo...</div>}>
+      <section className="relative min-h-screen text-white items-center justify-center overflow-x-hidden  ">
+        <Suspense fallback={<div className="text-white text-center py-6 ">Loading GlobeDemo...</div>}>
           <div className="absolute inset-0 opacity-77">
             <GlobeDemo />
           </div>

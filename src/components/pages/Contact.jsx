@@ -1,11 +1,12 @@
 import React from 'react';
 import NavbarDemo from '../NavbarDemo';
+import Footer from '../Footer';
 
 const Contact = () => {
   return (
     <>
     <NavbarDemo/>
-    <section className="bg-[#0f0f2f] py-20 text-white" id="contact">
+    <section className="bg-[#0f0f2f]  min-h-screen py-20 text-white" id="contact">
       <div className="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         
         {/* Left Side */}
@@ -57,7 +58,7 @@ const Contact = () => {
           </button>
         </form>
       </div>
-    </section>
+    </section>  
     </>
   );
 };

@@ -3,6 +3,7 @@ import { FaCheckCircle } from "react-icons/fa";
 import confetti from "canvas-confetti";
 import Footer from "../Footer";
 import NavbarDemo from "../NavbarDemo";
+import './SuccessAnimation.css';
 
 const plans = [
   {
@@ -117,7 +118,7 @@ const Pricing = () => {
     <>
     <NavbarDemo />
 
-    <section className="bg-[#0f0f2f] text-white py-20 px-4 text-center relative">
+    <section className="bg-[#0f0f2f] min-h-screen text-white py-20 px-4 text-center relative">
       <h2 className="text-4xl font-bold mb-4" data-aos="fade-up">
         Choose Your Plan
       </h2>
@@ -128,7 +129,6 @@ const Pricing = () => {
       >
         Find the perfect plan for your needs. Upgrade anytime.
       </p>
-
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
         {plans.map((plan, i) => (
           <div
@@ -178,29 +178,43 @@ const Pricing = () => {
         </div>
       )}
 
-      
-
       {showConfirmation && (
-        <div className="fixed inset-0 z-50 bg-black bg-opacity-40 backdrop-blur-sm flex items-center justify-center">
-          <div className="bg-white text-[#0f0f2f] px-6 py-6 rounded-2xl shadow-lg text-center max-w-sm w-[90%] animate-fadeIn relative">
+        <div className="fixed  inset-0 z-50 bg-black bg-opacity-40 backdrop-blur-sm flex items-center justify-center">
+          <div className="bg-white  text-[#0f0f2f] px-6 py-6 rounded-2xl shadow-lg text-center max-w-sm w-[90%] animate-fadeIn relative">
             <button
-              className="absolute top-3 right-4 text-lg text-gray-500 hover:text-red-500"
+              className="absolute top-3 right-4 text-2xl text-gray-500 hover:text-red-500"
               onClick={() => setShowConfirmation(false)}
             >
               &times;
             </button>
-            <h3 className="text-xl font-bold mb-2">✅ Payment Successful!</h3>
-            <p className="mb-2">
+          <div className="flex items-center gap-3 mb-2">
+            <svg
+              className="w-8 h-8 text-green-600 checkmark"
+              viewBox="0 0 52 52"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M14 27 L22 35 L38 19"
+                stroke="currentColor"
+                strokeWidth="5"
+                fill="none"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+            <h3 className="text-xl font-bold text-green-600">Payment Successful!</h3>
+          </div>
+
+          <p className="mb-2">
               Your <strong>{selectedPlan?.name}</strong> plan is now active.
             </p>
             <p className="text-sm text-gray-500">Closing in {timer} seconds...</p>
           </div>
         </div>
       )}
-    </section>
-    
+    </section>   
     </>
-
   );
 };
 

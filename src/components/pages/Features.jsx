@@ -93,7 +93,7 @@ function Features() {
       </Suspense>
 
       {/* Hero Section */}
-      <section className="relative min-h-screen py-24 px-4 sm:px-8 md:px-16 text-center bg-gradient-to-br from-[#1f1f47] via-[#1c3d72] to-[#14142b] text-white">
+      <section className="relative h-[700px] py-24 px-4 sm:px-8 md:px-16 text-center bg-gradient-to-br from-[#1f1f47] via-[#1c3d72] to-[#14142b] text-white"> 
     <div className="relative z-10">
       <h1 className="text-5xl font-extrabold mb-4" data-aos="fade-up">
         Welcome to the Future of <span className="text-blue-400">Work</span>
